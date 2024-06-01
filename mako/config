@@ -1,0 +1,8 @@
+default-timeout=5000
+# invisible=1
+layer=overlay
+
+# Styling
+font='Noto Sans' 10
+background-color=#000000AA
+border-color=#88888888

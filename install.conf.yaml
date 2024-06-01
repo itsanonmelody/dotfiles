@@ -16,6 +16,7 @@
     ~/.config/helix: helix
     ~/.config/hypr: hypr
     ~/.config/kitty: kitty
+    ~/.config/mako: mako
     ~/.config/swww: swww
     ~/.config/systemd: systemd
     ~/.config/waybar: waybar
