@@ -4,5 +4,8 @@ layer=overlay
 
 # Styling
 font='Noto Sans' 10
-background-color=#000000AA
-border-color=#88888888
+background-color=#00000064
+border-color=#6464649F
+
+outer-margin=20
+margin=0,0,10
