@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+while inotifywait -e MODIFY ~/.config/wallpaper; do
+  swww img -t any --transition-duration 2 ~/.config/wallpaper
+done

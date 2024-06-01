@@ -1,0 +1,12 @@
+#!/usr/bin/sh
+
+player=$(playerctl metadata | sed -n '1s/ .*//p')
+echo $player
+
+if [ "+$player" == "+spotify" ]; then
+	hyprctl dispatch focuswindow class:Spotify
+elif [ "+$player" == "+firefox" ]; then
+	hyprctl dispatch focuswindow class:firefoxdeveloperedition
+else
+	hyprctl dispatch workspace 6
+fi

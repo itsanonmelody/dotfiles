@@ -1,0 +1,23 @@
+- defaults:
+    link:
+      force: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.tmux.conf: .tmux.conf
+    ~/.zshrc: .zshrc
+    
+    ~/.config/login: login
+    ~/.config/logout: logout
+    ~/.config/wallpaper: wallpaper
+    ~/.config/cava: cava
+    ~/.config/helix: helix
+    ~/.config/hypr: hypr
+    ~/.config/kitty: kitty
+    ~/.config/swww: swww
+    ~/.config/waybar: waybar
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

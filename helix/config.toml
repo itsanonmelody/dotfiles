@@ -1,0 +1,31 @@
+theme = "nightfox-transparent"
+
+[editor]
+line-number = "relative"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+[keys.normal.C-t]
+a = [ "open_below", ":insert-output echo -n '- [ ] '", "insert_at_line_end" ]
+A = [ "open_above", ":insert-output echo -n '- [ ] '", "insert_at_line_end" ]
+s = [ "open_below", ":insert-output echo -n '- [ ] '", "indent", "insert_at_line_end" ]
+S = [ "open_above", ":insert-output echo -n '- [ ] '", "indent", "insert_at_line_end" ]
+A-s = [ "open_below", ":insert-output echo -n '- [ ] '", "unindent", "insert_at_line_end" ]
+A-S = [ "open_above", ":insert-output echo -n '- [ ] '", "unindent", "insert_at_line_end" ]
+c = [ "extend_line_below", "delete_selection", "open_above", ":insert-output echo -n '- [ ] '", "insert_at_line_end" ]
+space = [
+  "save_selection",
+  "goto_first_nonwhitespace",
+  "move_char_right",
+  "move_char_right",
+  "move_char_right",
+  ":pipe awk '{ printf \"%s\",($0 == \" \" ? \"X\" : \" \")}'",
+  "jump_backward"
+]
+
+[keys.insert]
+C-backspace = "delete_word_backward"

@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+killall cava
+
+systemctl --user stop auto-swww
+swww kill
+
+brightnessctl --save
