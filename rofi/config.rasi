@@ -1,0 +1,10 @@
+@theme "/usr/share/rofi/themes/purple.rasi"
+
+* {
+	border-color: rgba(252, 154, 250, 80%);
+	separatorcolor: rgba(252, 154, 250, 50%);
+	background: rgba(0, 0, 0, 60%);
+	normal-background: rgba(252, 154, 250, 0%);
+	alternate-normal-background: rgba(252, 154, 250, 0%);
+	selected-normal-background: rgba(252, 154, 250, 10%);
+}

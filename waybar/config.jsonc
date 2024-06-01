@@ -32,11 +32,11 @@
     "format-alt": "{:%Y-%m-%d}"
   },
   "custom/media": {
-    "format": "{icon} {}",
+    "format": "{}",
     "return-type": "json",
     "max-length": 40,
     "format-icons": {
-      "firefox": "",
+      "firefox": "",
       "spotify": "",
       "default": "🎜"
     },
