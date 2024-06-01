@@ -17,6 +17,7 @@
     ~/.config/hypr: hypr
     ~/.config/kitty: kitty
     ~/.config/swww: swww
+    ~/.config/systemd: systemd
     ~/.config/waybar: waybar
 
 - shell:

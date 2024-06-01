@@ -1,0 +1,7 @@
+[Unit]
+Description=Automatically runs swww-img when ~/.config/wallpaper is modified.
+ConditionPathExists=%h/.config/wallpaper
+
+[Service]
+Type=exec
+ExecStart=%h/.config/swww/auto-swww
