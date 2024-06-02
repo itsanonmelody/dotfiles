@@ -1,5 +1,6 @@
 {
   "layer": "top",
+  "reload_style_on_change": true,
   "modules-left": [
     "hyprland/workspaces"
   ],
@@ -27,9 +28,12 @@
       "*": 6
     }
   },
-  "clock": {
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
+  "hyprland/window": {
+    "max-length": 40,
+    "rewrite": {
+      "(.*) – Mozilla Firefox": "$1",
+      "(.*) - Discord": "$1"
+    }
   },
   "custom/media": {
     "format": "{}",
@@ -104,5 +108,10 @@
       " "
     ],
     "tooltip": false
+  },
+  "clock": {
+    "interval": 20,
+    "format-alt": "{:%Y-%m-%d}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
   }
 }
