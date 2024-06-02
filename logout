@@ -1,4 +1,6 @@
 #!/usr/bin/sh
+eww -c ~/.config/eww/widgets kill
+
 killall cava
 
 systemctl --user stop auto-swww

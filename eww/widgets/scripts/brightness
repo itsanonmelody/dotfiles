@@ -1,0 +1,31 @@
+#!/usr/bin/sh
+brightness=$(brightnessctl | awk 'NR==2 {print $4}' | sed 's/[^0-9]//g')
+
+print_brightness_icon()
+{
+  if [ $brightness -lt 11 ]; then
+    echo -n " "
+  elif [ $brightness -lt 22 ]; then
+    echo -n " "
+  elif [ $brightness -lt 33 ]; then
+    echo -n " "
+  elif [ $brightness -lt 44 ]; then
+    echo -n " "
+  elif [ $brightness -lt 56 ]; then
+    echo -n " "
+  elif [ $brightness -lt 67 ]; then
+    echo -n " "
+  elif [ $brightness -lt 78 ]; then
+    echo -n " "
+  elif [ $brightness -lt 89 ]; then
+    echo -n " "
+  else
+    echo -n " "
+  fi
+}
+
+if [ ":$1" == ":--get-brightness-icon" ]; then
+  print_brightness_icon
+elif [ ":$1" == ":--get-brightness" ]; then
+  echo -n "$brightness"
+fi

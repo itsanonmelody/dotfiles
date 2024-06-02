@@ -1,0 +1,7 @@
+(defvar active-notification "")
+
+(defvar volume-icon "")
+(defvar volume-level "")
+
+(defvar brightness-icon "")
+(defvar brightness-level "")

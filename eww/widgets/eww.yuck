@@ -1,0 +1,14 @@
+(include "./eww_widgets.yuck")
+
+(defwindow notification
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "400px"
+                      :height "32px"
+                      :anchor "center")
+  :stacking "overlay"
+  :namespace "notification"
+  (overlay
+    (volume)
+    (brightness)))

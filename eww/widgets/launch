@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+declare -r CONFIG_DIR="$HOME/.config/eww/widgets"
+
+if [ ":$1" = ":--notif" ]; then
+	"$CONFIG_DIR/scripts/notification" "$2"
+fi

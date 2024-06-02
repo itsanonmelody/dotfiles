@@ -1,0 +1,27 @@
+#!/usr/bin/sh
+volume_data=($(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk -F' ' '{print ($2 * 100) " " $3 }'))
+
+print_volume_icon()
+{
+	volume=${volume_data[0]}
+	muted=${volume_data[1]}
+
+	# $muted is empty when audio is not muted
+	if [ -z "$muted" ]; then
+		if [ $volume -lt 33 ]; then
+			echo -n "󰕿 "
+		elif [ $volume -lt 67 ]; then
+			echo -n "󰖀 "
+		else
+			echo -n "󰕾 "
+		fi
+	else
+		echo -n "󰝟 "
+	fi
+}
+
+if [ ":$1" = ":--get-volume-icon" ]; then
+	print_volume_icon
+elif [ ":$1" = ":--get-volume" ]; then
+	echo -n ${volume_data[0]}
+fi

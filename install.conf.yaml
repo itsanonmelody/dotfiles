@@ -12,7 +12,9 @@
     ~/.config/login: login
     ~/.config/logout: logout
     ~/.config/wallpaper: wallpaper
+
     ~/.config/cava: cava
+    ~/.config/eww: eww
     ~/.config/helix: helix
     ~/.config/hypr: hypr
     ~/.config/kitty: kitty

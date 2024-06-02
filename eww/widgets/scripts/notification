@@ -1,0 +1,43 @@
+#!/usr/bin/sh
+declare -ri CLOSE_TIMEOUT=2000
+declare -r EWW_CONFIG="$HOME/.config/eww/widgets"
+declare -r EWW_SCRIPTS="$HOME/.config/eww/widgets/scripts"
+declare -r CACHE_DIR="/tmp/eww"
+declare -r LOCK_FILE="$CACHE_DIR/widget-notification.lock"
+
+create_lock_file()
+{
+  [ ! -d "$CACHE_DIR" ] && mkdir -p "$CACHE_DIR"
+  echo "$1" > "$LOCK_FILE"
+}
+
+if [ ":$1" = ":volume" ]; then
+  eww -c "$EWW_CONFIG" update "volume-icon=$($EWW_SCRIPTS/audio --get-volume-icon)"
+  eww -c "$EWW_CONFIG" update "volume-level=$($EWW_SCRIPTS/audio --get-volume)"
+elif [ ":$1" = ":brightness" ]; then
+  eww -c "$EWW_CONFIG" update "brightness-icon=$($EWW_SCRIPTS/brightness --get-brightness-icon)"
+  eww -c "$EWW_CONFIG" update "brightness-level=$($EWW_SCRIPTS/brightness --get-brightness)"
+fi
+
+eww -c "$EWW_CONFIG" update "active-notification=$1"
+eww -c "$EWW_CONFIG" open notification
+
+if [ -e "$LOCK_FILE" ]; then
+  create_lock_file $CLOSE_TIMEOUT
+else
+  create_lock_file $CLOSE_TIMEOUT
+  trap "rm -f '$LOCK_FILE'" EXIT
+  
+  while [ -e "$LOCK_FILE" ]; do
+    sleep 0.05
+    TIME_LEFT=$(cat "$LOCK_FILE")
+    if [ $TIME_LEFT -le 0 ]; then
+      eww -c "$EWW_CONFIG" close notification
+    else
+      let "TIME_LEFT-=50"
+      echo $TIME_LEFT > "$LOCK_FILE"
+    fi
+  done
+fi
+  
+

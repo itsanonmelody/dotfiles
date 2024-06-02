@@ -1,0 +1,50 @@
+(include "./eww_variables.yuck")
+
+;;; Notification widgets
+(defwidget notification-widget [name]
+  (revealer :transition "none"
+            :reveal {active-notification == name}
+            :halign "center"
+            :valign "center"
+      (children)))
+
+(defwidget volume []
+  (notification-widget :name "volume"
+    (centerbox :orientation "h"
+               :class "notification-content"
+      (box :orientation "h"
+           :class "notification-icon"
+           :halign "center"
+           :valign "center"
+        volume-icon)
+      (progress :value volume-level
+                :orientation "h"
+                :halign "center"
+                :valign "center"
+                :width "400px"
+                :class "volume-slider")
+      (box :orientation "h"
+           :class "notification-value"
+           :halign "center"
+           :valign "center"
+        "${volume-level}%"))))
+      
+(defwidget brightness []
+  (notification-widget :name "brightness"
+    (centerbox :orientation "h"
+               :class "notification-content"
+      (box :orientaion "h"
+           :class "notification-icon"
+           :halign "center"
+           :valign "center"
+        brightness-icon)
+      (progress :value brightness-level
+                :orientation "h"
+                :halign "center"
+                :valign "center"
+                :class "brightness-slider")
+      (box :orientation "h"
+           :class "notification-value"
+           :halign "center"
+           :valign "center"
+        "${brightness-level}%"))))
