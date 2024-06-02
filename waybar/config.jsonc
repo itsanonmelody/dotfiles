@@ -19,8 +19,8 @@
       "1": " ",
       "2": " ",
       "3": " ",
-      "4": "",
-      "5": " ",
+      "4": " ",
+      "5": " ",
       "6": " "
     },
     "persistent-workspaces": {
@@ -36,7 +36,7 @@
     "return-type": "json",
     "max-length": 40,
     "format-icons": {
-      "firefox": "",
+      "firefox": "󰈹",
       "spotify": "",
       "default": "🎜"
     },
@@ -45,16 +45,16 @@
     "on-click": "$HOME/.config/waybar/mediaplayer_focus"
   },
   "pulseaudio": {
-    "format": "{volume}% {icon}   {format_source}",
+    "format": "{volume}% {icon} {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
+    "format-bluetooth-muted": "󰂲 {icon} {format_source}",
+    "format-muted": "󰝟 {format_source}",
+    "format-source": "{volume}% 󰍬",
     "format-source-muted": "",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
+      "headphone": "󰋋",
+      "hands-free": "",
+      "headset": "",
       "phone": "",
       "portable": "",
       "car": "",
@@ -89,8 +89,8 @@
     },
     "format": "{capacity}% {icon}",
     "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
+    "format-charging": "{capacity}% 󰂄",
+    "format-plugged": "{capacity}% 󰚥",
     "format-alt": "{time} {icon}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
