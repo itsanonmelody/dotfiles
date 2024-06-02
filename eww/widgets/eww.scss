@@ -18,8 +18,10 @@
 .notification progressbar>trough {
   min-width: 300px;
   background-color: rgba(100, 114, 125, 0.3);
+  border-radius: 32px;
 }
 
 .notification progressbar>trough>progress {
   background-color: #fc9afa;
+  border-radius: 32px;
 }
