@@ -70,9 +70,9 @@ class PlayerManager:
         display_text = ""
         if text:
             if player.props.status == "Playing":
-                display_text = text + " "
+                display_text = " " + text 
             else:
-                display_text = text + " "
+                display_text = " " + text 
 
         output = {"text": display_text,
                   "class": "custom-" + player.props.player_name,

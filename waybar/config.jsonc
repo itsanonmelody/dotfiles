@@ -42,17 +42,18 @@
     },
     "escape": true,
     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
-    "on-click": "$HOME/.config/waybar/mediaplayer_focus"
+    "on-click": "playerctl play-pause",
+    "on-click-right": "$HOME/.config/waybar/mediaplayer_focus"
   },
   "pulseaudio": {
-    "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": "󰂲 {icon} {format_source}",
-    "format-muted": "󰝟 {format_source}",
-    "format-source": "{volume}% 󰍬",
+    "format": "{icon}{volume}% {format_source}",
+    "format-bluetooth": "{icon}{volume}% {format_source}",
+    "format-bluetooth-muted": "{icon}󰂲  {format_source}",
+    "format-muted": "󰝟  {format_source}",
+    "format-source": "󰍬{volume}%",
     "format-source-muted": "",
     "format-icons": {
-      "headphone": "󰋋",
+      "headphone": "󰋋 ",
       "hands-free": "",
       "headset": "",
       "phone": "",
@@ -64,42 +65,41 @@
         ""
       ]
     },
-    "on-click": "pavucontrol"
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol"
   },
   "backlight": {
-    "format": "{percent}% {icon}",
+    "format": "{icon}{percent}%",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
     ],
     "tooltip": false
   },
   "battery": {
     "states": {
-      "good": 95,
       "warning": 30,
       "critical": 15
     },
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% 󰂄",
-    "format-plugged": "{capacity}% 󰚥",
-    "format-alt": "{time} {icon}",
+    "format": "{icon}{capacity}%",
+    "format-full": "{icon}{capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-alt": "{icon}{time}",
     // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
     ],
     "tooltip": false
   }
