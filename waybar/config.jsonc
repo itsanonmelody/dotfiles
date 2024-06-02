@@ -43,7 +43,9 @@
     "escape": true,
     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
     "on-click": "playerctl play-pause",
-    "on-click-right": "$HOME/.config/waybar/mediaplayer_focus"
+    "on-click-right": "$HOME/.config/waybar/mediaplayer_focus",
+    "on-scroll-down": "playerctl next",
+    "on-scroll-up": "playerctl previous"
   },
   "pulseaudio": {
     "format": "{icon}{volume}% {format_source}",
