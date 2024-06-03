@@ -1,4 +1,6 @@
-PROMPT='%F{yellow}[%F{147}%m%F{yellow}] %F{153}%2~%F{white}%# '
+PROMPT='%F{176}[%F{183}%m%F{176}] %F{189}%2~%F{white}%# '
+
+alias hx=/usr/bin/helix
 
 gnome_schema='org.gnome.desktop.interface'
 gsettings set $gnome_schema gtk-theme 'Material-Black-Plum'
